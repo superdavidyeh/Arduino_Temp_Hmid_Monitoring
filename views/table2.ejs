@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<body>
+    <div id="bathroom-chart"></div>
+    
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+  <script src="../vendor/morrisjs/morris.js"></script>
+    <script type="text/javascript">
+        var bathroomData = [
+            { time: "2014-06-17T10:54:01", r2: 5 },
+            { time: "2014-06-17T11:09:01", r0: 4, r1: 79, r2: 7, r3: 79 },
+            { time: "2014-06-17T11:24:01", r0: 11, r1: 88, r2: 13, r3: 100 },
+            { time: "2014-06-17T11:39:01", r0: 11, r1: 69, r2: 12, r3: 73 }
+        ];
+        var bathroomIDs = [ "r0", "r1", "r2", "r3" ];
+        var bathroomNames = [ "校本部学生浴室（男）", "校本部学生浴室（女）", "XX校区学生浴室（男）", "XX校区学生浴室（女）" ];
+        
+        Morris.Line({
+            element: "bathroom-chart",
+            data: bathroomData,
+            xkey: "time",
+            ykeys: bathroomIDs,
+            labels: bathroomNames
+        });
+    </script>
+</body>
+</html>
